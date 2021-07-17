@@ -1,7 +1,8 @@
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+name: azure_pipelines_storage_master
+
+trigger:
+- master
+
+pool:
+    name: 'Self Hosted'
+
