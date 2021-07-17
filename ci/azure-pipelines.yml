@@ -6,3 +6,13 @@ trigger:
 pool:
     name: 'Self Hosted'
 
+stages:
+    - stage: BuildandTest
+      displayName: Building and Testing Project
+      jobs:
+          - job: Building
+            steps:
+                - checkout: self
+                  clean: True
+                - bash: "sleep 60"
+    
